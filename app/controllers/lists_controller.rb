@@ -23,4 +23,8 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
   end
 
+  def list_params
+    params.require(:list).permit(:name) # Aquí debes incluir todos los atributos permitidos
+  end
+
 end
