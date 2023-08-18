@@ -1,0 +1,6 @@
+<h1>add movie <%= @list.name %></h1>
+<%= simple_form_for([@list, @bookmark]) do |f| %>
+<%= f.input :comment  %>
+<%= f.association :movie, collection: Movie.where.not(id: @list.movies.pluck(:id)) %>
+<%= f.submit %>
+<% end %>

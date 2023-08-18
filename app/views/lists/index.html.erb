@@ -1,0 +1,17 @@
+<h1>Display List</h1>
+
+<ul class="d-flex justify-content-center list-unstyled">
+  <% @lists.each do |list| %>
+    <li class="p-3 border mx-2 pt-4 mt-3 bg-info">
+      <%= link_to list.name, list_path(list)%>
+      <input type="checkbox">
+    </li>
+  <% end %>
+</ul>
+
+<h1>Crear un botón</h1>
+<div class="">
+  <%= link_to "Add a new list", new_list_path, class: "btn btn-primary mt-2 mr-2" %>
+</div>
+
+
